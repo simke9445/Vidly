@@ -1,0 +1,17 @@
+﻿@model System.Collections.Generic.List<Vidly.Models.Movie>
+
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+
+<div class="container">
+    @foreach (var movie in Model)
+    {
+        <div class="row">
+            @Html.ActionLink(movie.Name, "Details", "Movie", new { id = movie.Id }, null)
+        </div>
+    }
+</div>

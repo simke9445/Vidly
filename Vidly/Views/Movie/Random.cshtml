@@ -1,0 +1,34 @@
+﻿@using System.Security.Cryptography
+@using Vidly.Models
+@model Vidly.ViewModels.RandomMovieViewModel
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var className = Model.Customers.Count > 0 ? "popular" : null;
+}
+
+@*
+    This is how you write commends in Razor.
+    Also css class names are added via @tag.
+*@
+<h2 class="@className"> @Model.Movie.Name </h2>
+
+@if (Model.Customers.Count == 0)
+{
+    <text> None has rented movie before </text>
+}
+else
+{
+    <ul>
+        @foreach (Customer customer in Model.Customers)
+        {
+        <li>@customer.Name</li>
+        }
+    </ul>
+    
+}
+
+

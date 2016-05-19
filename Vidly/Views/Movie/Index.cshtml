@@ -7,11 +7,24 @@
 
 <h2>Movies</h2>
 
-<div class="container">
-    @foreach (var movie in Model)
-    {
-        <div class="row">
-            @Html.ActionLink(movie.Name, "Details", "Movie", new { id = movie.Id }, null)
-        </div>
-    }
-</div>
+<table width="700">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Genre</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(movie.Name, "Details", "Movie", new {id = movie.Id}, null)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => movie.Genre.Name)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

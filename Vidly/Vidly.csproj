@@ -203,10 +203,61 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605191540065_InitialModel.cs" />
+    <Compile Include="Migrations\201605191540065_InitialModel.Designer.cs">
+      <DependentUpon>201605191540065_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191704191_AddMembershipType.cs" />
+    <Compile Include="Migrations\201605191704191_AddMembershipType.Designer.cs">
+      <DependentUpon>201605191704191_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191706083_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201605191706083_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201605191706083_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191715580_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201605191715580_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201605191715580_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191720254_AddIsSubscribedFieldToCustomer.cs" />
+    <Compile Include="Migrations\201605191720254_AddIsSubscribedFieldToCustomer.Designer.cs">
+      <DependentUpon>201605191720254_AddIsSubscribedFieldToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191730405_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201605191730405_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201605191730405_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191731254_UpdateNamesInMembershipTypes.cs" />
+    <Compile Include="Migrations\201605191731254_UpdateNamesInMembershipTypes.Designer.cs">
+      <DependentUpon>201605191731254_UpdateNamesInMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191745538_AddBirthdayFieldInCustomer.cs" />
+    <Compile Include="Migrations\201605191745538_AddBirthdayFieldInCustomer.Designer.cs">
+      <DependentUpon>201605191745538_AddBirthdayFieldInCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191746194_UpdateBirthdays.cs" />
+    <Compile Include="Migrations\201605191746194_UpdateBirthdays.Designer.cs">
+      <DependentUpon>201605191746194_UpdateBirthdays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191806259_CreateMoviesTable.cs" />
+    <Compile Include="Migrations\201605191806259_CreateMoviesTable.Designer.cs">
+      <DependentUpon>201605191806259_CreateMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191809219_PopulateGenres.cs" />
+    <Compile Include="Migrations\201605191809219_PopulateGenres.Designer.cs">
+      <DependentUpon>201605191809219_PopulateGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605191821007_AddStock_ReleaseDate_DateAddedFieldsToMovie.cs" />
+    <Compile Include="Migrations\201605191821007_AddStock_ReleaseDate_DateAddedFieldsToMovie.Designer.cs">
+      <DependentUpon>201605191821007_AddStock_ReleaseDate_DateAddedFieldsToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -289,6 +340,44 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605191540065_InitialModel.resx">
+      <DependentUpon>201605191540065_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191704191_AddMembershipType.resx">
+      <DependentUpon>201605191704191_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191706083_PopulateMembershipTypes.resx">
+      <DependentUpon>201605191706083_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191715580_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201605191715580_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191720254_AddIsSubscribedFieldToCustomer.resx">
+      <DependentUpon>201605191720254_AddIsSubscribedFieldToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191730405_AddNameToMembershipType.resx">
+      <DependentUpon>201605191730405_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191731254_UpdateNamesInMembershipTypes.resx">
+      <DependentUpon>201605191731254_UpdateNamesInMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191745538_AddBirthdayFieldInCustomer.resx">
+      <DependentUpon>201605191745538_AddBirthdayFieldInCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191746194_UpdateBirthdays.resx">
+      <DependentUpon>201605191746194_UpdateBirthdays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191806259_CreateMoviesTable.resx">
+      <DependentUpon>201605191806259_CreateMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191809219_PopulateGenres.resx">
+      <DependentUpon>201605191809219_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605191821007_AddStock_ReleaseDate_DateAddedFieldsToMovie.resx">
+      <DependentUpon>201605191821007_AddStock_ReleaseDate_DateAddedFieldsToMovie.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

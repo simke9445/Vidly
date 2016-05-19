@@ -1,4 +1,5 @@
-﻿@model Vidly.Models.Customer
+﻿@using Microsoft.Ajax.Utilities
+@model Vidly.Models.Customer
 
 @{
     ViewBag.Title = "Details";
@@ -6,4 +7,9 @@
 }
 
 <h2>@Model.Name</h2>
+<p>Membership Type: @Model.MembershipType.Name</p>
+@if (!Model.Birthday.IsNullOrWhiteSpace())
+{
+    <p>Birthday: @Model.Birthday</p>
+}
 

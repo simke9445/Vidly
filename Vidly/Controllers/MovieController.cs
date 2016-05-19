@@ -6,11 +6,13 @@ using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
     public class MovieController : Controller
     {
+        private ApplicationDbContext _context = new ApplicationDbContext();
         // GET: Movie
         public ActionResult PageIndex(int? pageIndex, String sortBy)
         {
@@ -60,23 +62,15 @@ namespace Vidly.Controllers
 
         public ViewResult Index()
         {
-            var movies = GetMovies();
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
             return View(movies);
         }
 
         public ViewResult Details(int id)
         {
-            var movie = GetMovies().SingleOrDefault(x => x.Id == id);
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(x => x.Id == id);
             return View(movie);
         }
 
-        private List<Movie> GetMovies()
-        {
-            return new List<Movie>()
-            {
-                new Movie() {Name = "Wudaa", Id = 1},
-                new Movie() {Name = "Zudaa", Id = 2}
-            };
-        } 
     }
 }

@@ -7,6 +7,8 @@
 
 <h2>Customers</h2>
 
+@Html.ActionLink("New Customer", "CustomerForm", "Customers", new {@class="btn btn-primary"})
+
 <table width="600">
     <thead>
         <tr>
@@ -19,7 +21,7 @@
         {
             <tr>
                 <td>
-                    @Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)
+                    @Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)
                 </td>
                 <td>
                     @Html.DisplayFor(c => customer.MembershipType.Name)

@@ -7,6 +7,8 @@
 
 <h2>Movies</h2>
 
+@Html.ActionLink("New Movie", "MovieForm", "Movie", new {source = "New"}, new {@class="btn btn-primary"})
+
 <table width="700">
     <thead>
     <tr>
@@ -19,7 +21,7 @@
         {
             <tr>
                 <td>
-                    @Html.ActionLink(movie.Name, "Details", "Movie", new {id = movie.Id}, null)
+                    @Html.ActionLink(movie.Name, "Edit", "Movie", new {id = movie.Id}, null)
                 </td>
                 <td>
                     @Html.DisplayFor(m => movie.Genre.Name)
